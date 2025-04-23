@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-spring-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: docker-spring-app
+  template:
+    metadata:
+      labels:
+        app: docker-spring-app
+    spec:
+      containers:
+        - name: docker-spring-app-container
+          image: ortheon/my-spring-app-blazej:latest
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: docker-spring-app-config

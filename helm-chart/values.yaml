@@ -1,0 +1,20 @@
+# values.yaml
+
+nginx:
+  replicaCount: 5
+  image: nginx
+
+postgres:
+  replicaCount: 1
+  image: postgres
+  postgresUser: user
+  postgresPassword: password
+  postgresDb: mydb
+
+app:
+  image: my-spring-app-blazej
+  replicaCount: 1
+  springDatasourceUrl: jdbc:postgresql://postgres:5432/mydb
+  devops: blazej
+  springDatasourceUsername: user
+  springDatasourcePassword: password

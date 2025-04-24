@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: docker-spring-app-config
-data:
-  DEVOPS: "BLAZEJ"
